@@ -30,6 +30,8 @@ drag_test.perform_drag_and_drop()
 time.sleep(2)
 
 
+
+# Form class
 class FormPage:
     def __init__(self,driver):
         self.driver=driver
@@ -63,4 +65,26 @@ class FormPage:
 
 
 
-        
+
+# Form Testing
+
+driver.get("https://www.formExample.com")
+form_test=FormPage(driver)
+
+form_data={
+    'first_name':"Hammad",
+    'lastName':'Mustafa',
+    'Email':'hammadworks123@gmail.com',
+    'Country':'Pakistan',
+    'State':'xyz',
+    'City':'Karachi',
+    'Fax':'abc',
+    'Postal_code':'123'
+
+}
+form_test.fill_form(form_data)
+form_test.submitForm()
+print("automation test completed")
+
+time.sleep(5)
+
